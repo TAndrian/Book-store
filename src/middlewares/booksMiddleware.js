@@ -57,7 +57,12 @@ module.exports = {
 		try {
 			const response = await DB.collection("books").findOne(query);
 			findOne = response.title;
-		} catch (error) {}
+		} catch (error) {
+			console.log(
+				"🚀 ~ file: booksMiddleware.js ~ line 61 ~ bookAlreadyExists: ~ error",
+				error
+			);
+		}
 		if (findOne === title) {
 			return res
 				.status(400)
