@@ -1,6 +1,6 @@
 const bookService = require("../services/bookService");
 
-const booksController = {
+module.exports = {
 	getBooks: (req, res) => {
 		try {
 			bookService.getBooks(res);
@@ -45,8 +45,4 @@ const booksController = {
 			console.log("🚀 ~ file: booksController.js ~ line 45 ~ error", error);
 		}
 	},
-};
-
-module.exports = {
-	booksController,
 };

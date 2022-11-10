@@ -57,8 +57,7 @@ module.exports = {
 				.findOne({ _id: ObjectId(bookId) })
 				.then((doc) => {
 					res.status(200).json({ book: doc });
-				})
-				.catch((err) => res.status(500).json({ error: err }));
+				});
 		} catch (error) {
 			console.error(error);
 		}
@@ -77,8 +76,7 @@ module.exports = {
 				.updateOne({ _id: ObjectId(bookId) }, { $set: book })
 				.then((result) => {
 					res.status(200).json({ updated: result });
-				})
-				.catch(() => res.json({ message: "Could not update the book" }));
+				});
 		} catch (error) {
 			console.log("🚀 ~ file: bookService.js ~ line 71 ~ error", error);
 		}
@@ -95,8 +93,7 @@ module.exports = {
 				.deleteOne({ _id: ObjectId(bookId) })
 				.then((result) => {
 					res.status(200).json({ updated: result });
-				})
-				.catch(() => res.json({ message: "Could not update the book" }));
+				});
 		} catch (error) {
 			console.log("🚀 ~ file: bookService.js ~ line 101 ~ error", error);
 		}
